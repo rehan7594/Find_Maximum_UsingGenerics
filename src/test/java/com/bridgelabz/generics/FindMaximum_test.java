@@ -6,62 +6,64 @@ import org.junit.Test;
 public class FindMaximum_test {
 	private static final double DELTA = 1e-15;
 
-	@Test  
-	public void shouldReturn_MaximumIntegerValue(){  
-		assertEquals(44,FindMaximum.getMax_IntegerValue(new int[]{44,32,12}));  
-		assertEquals(23,FindMaximum.getMax_IntegerValue(new int[]{23,11,9}));  
-	}  
-
-	@Test  
-	public void shouldReturn_MaximumIntegervalue(){  
-		assertEquals(40,FindMaximum.getMax_IntegerValue(new int[]{31,9,40}));  
-		assertEquals(39,FindMaximum.getMax_IntegerValue(new int[]{4,39,35}));  
-	}  
-
-	@Test  
-	public void shouldReturn_MaximumIntegerValuE(){  
-		assertEquals(72,FindMaximum.getMax_IntegerValue(new int[]{8,32,72}));  
-		assertEquals(65,FindMaximum.getMax_IntegerValue(new int[]{23,11,65}));  
+	@Test
+	public void shouldReturn_MaxIntegerValue() {
+		int maxValue=Maximum.maximum(52, 11, 21);
+		assertEquals( 52 , maxValue );
+		int maxValue1=Maximum.maximum(5, 37, 2);
+		assertEquals( 37 , maxValue1 );
+		int maxValue2=Maximum.maximum(100, 1000, 10000);
+		assertEquals( 10000 , maxValue2 );
 	}
 
-	@Test  
-	public void shouldReturn_MaximumFloatValue(){  
-		assertEquals(42.5f,FindMaximum.getMax_FloatValue(new float[]{42.5f, 42.1f,12.7f}), DELTA);  
-		assertEquals(23.2f,FindMaximum.getMax_FloatValue(new float[]{23.2f,11.5f,9.8f}), DELTA);  
-	}  
+	@Test
+	public void shouldReturn_MaxFloatValue() {
+		float maxValue=Maximum.maximum(5.5f, 3.9f, 1.4f);
+		assertEquals( 5.5f , maxValue, DELTA );
+		float maxValue1=Maximum.maximum(0.65f, 0.81f, 0.045f);
+		assertEquals( 0.81f , maxValue1, DELTA);
+		float maxValue2=Maximum.maximum(100.56f, 1000.88f, 1000.89f);
+		assertEquals( 1000.89f , maxValue2, DELTA );
+	}
 
+	@Test
+	public void shouldReturn_MaxStringValue() {
+		String maxValue=Maximum.maximum("Peach", "Apple", "Banana");
+		assertEquals( "Peach" , maxValue );
+		String maxValue1=Maximum.maximum("dew", "new", "few");
+		assertEquals( "new" , maxValue1);
+		String maxValue2=Maximum.maximum("spicy", "sour", "sweet");
+		assertEquals( "sweet" , maxValue2);
+	}
+
+	@Test
+	public void shouldReturn_Max_integerValue() {
+		int maxValue=Maximum.maximumValues(52, 11, 21);
+		assertEquals( 52 , maxValue );
+		int maxValue1=Maximum.maximumValues(5, 37, 2, 91, 65);
+		assertEquals( 91 , maxValue1 );
+		int maxValue2=Maximum.maximumValues(32, 1, 9, 102, 36, 99, 199, 21, 500);
+		assertEquals( 500 , maxValue2 );
+	}
+
+	@Test
+	public void shouldReturn_Max_floatValue() {
+		float maxValue=Maximum.maximumValues(5.5f, 3.9f, 1.4f, 4.8f, 9.0f, 2.1f);
+		assertEquals( 9.0f , maxValue, DELTA );
+		float maxValue1=Maximum.maximumValues(0.65f, 0.81f, 0.045f, 0.87f);
+		assertEquals( 0.87f , maxValue1, DELTA);
+		float maxValue2=Maximum.maximumValues(100.56f, 10.88f, 100.89f, 10.087f, 100.66f);
+		assertEquals( 100.89f , maxValue2, DELTA );
+	}
 
 
 	@Test
-	public void shouldReturn_MaximumFloatvalue(){  
-		assertEquals(39.4f,FindMaximum.getMax_FloatValue(new float[]{31.0f,39.4f,10.1f}), DELTA);  
-		assertEquals(49.9f,FindMaximum.getMax_FloatValue(new float[]{4.0f,49.9f,35.0f}), DELTA);  
-	}  
-
-	@Test  
-	public void shouldReturn_MaximumFloatValuE(){  
-		assertEquals(72.2f,FindMaximum.getMax_FloatValue(new float[]{8.5f,32.0f,72.2f}), DELTA );  
-		assertEquals(65.7f,FindMaximum.getMax_FloatValue(new float[]{23.8f,11.6f,65.7f}), DELTA);  
-	}  
-
-	@Test 
-	public void shouldReturn_MaximumStringValuE(){
-		assertEquals("Banana",FindMaximum.getMax_StringValue(new String[] {"Banana", "Peach", "Apple"}));
-		assertEquals("Rabbit",FindMaximum.getMax_StringValue(new String[] {"Rabbit", "Snake", "Rat"}));
-
-	}
-
-	@Test 
-	public void shouldReturn_MaximumStringValue(){
-		assertEquals("Transcation",FindMaximum.getMax_StringValue(new String[] {"Money", "Transcation", "Cash"}));
-		assertEquals("Orange",FindMaximum.getMax_StringValue(new String[] {"Blue", "Orange", "Red"}));
-
-	}
-
-	@Test 
-	public void shouldReturn_MaximumStringvalue(){
-		assertEquals("Karnataka",FindMaximum.getMax_StringValue(new String[] {"Delhi", "Goa", "Karnataka"}));
-		assertEquals("Aeroplane",FindMaximum.getMax_StringValue(new String[] {"Bus", "Train", "Aeroplane"}));
-
+	public void shouldReturn_Max_StringValue() {
+		String maxValue=Maximum.maximumValues("Peach", "Apple", "Banana", "Tomato","Pomegranate");
+		assertEquals( "Tomato" , maxValue );
+		String maxValue1=Maximum.maximumValues("dew", "new", "few", "glue", "head");
+		assertEquals( "new" , maxValue1);
+		String maxValue2=Maximum.maximumValues("spicy", "sweet");
+		assertEquals( "sweet" , maxValue2);
 	}
 }
