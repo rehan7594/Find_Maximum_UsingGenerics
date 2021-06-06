@@ -43,4 +43,25 @@ public class FindMaximum_test {
 		assertEquals(72.2f,FindMaximum.getMax_FloatValue(new float[]{8.5f,32.0f,72.2f}), DELTA );  
 		assertEquals(65.7f,FindMaximum.getMax_FloatValue(new float[]{23.8f,11.6f,65.7f}), DELTA);  
 	}  
+
+	@Test 
+	public void shouldReturn_MaximumStringValuE(){
+		assertEquals("Banana",FindMaximum.getMax_StringValue(new String[] {"Banana", "Peach", "Apple"}));
+		assertEquals("Rabbit",FindMaximum.getMax_StringValue(new String[] {"Rabbit", "Snake", "Rat"}));
+
+	}
+
+	@Test 
+	public void shouldReturn_MaximumStringValue(){
+		assertEquals("Transcation",FindMaximum.getMax_StringValue(new String[] {"Money", "Transcation", "Cash"}));
+		assertEquals("Orange",FindMaximum.getMax_StringValue(new String[] {"Blue", "Orange", "Red"}));
+
+	}
+
+	@Test 
+	public void shouldReturn_MaximumStringvalue(){
+		assertEquals("Karnataka",FindMaximum.getMax_StringValue(new String[] {"Delhi", "Goa", "Karnataka"}));
+		assertEquals("Aeroplane",FindMaximum.getMax_StringValue(new String[] {"Bus", "Train", "Aeroplane"}));
+
+	}
 }

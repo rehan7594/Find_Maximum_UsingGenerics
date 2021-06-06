@@ -21,4 +21,16 @@ public class FindMaximum {
 		}
 		return maxValue;
 	}
+	
+	public static String getMax_StringValue(String[] string){
+		 int index = 0; 
+		 int elementLength = string[0].length();
+		 for(int i=1; i< string.length; i++) {
+		     if(string[i].length() > elementLength) {
+		        index = i; elementLength =string[i].length();
+		    }
+		}
+		return string[index];
+	}
+
 }
